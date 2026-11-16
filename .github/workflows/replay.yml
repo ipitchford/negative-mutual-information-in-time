@@ -41,7 +41,7 @@ jobs:
       - name: Working tree unchanged
         run: test -z "$(git status --porcelain)"
   numerics:
-    name: Descriptive numerics: quoted values compared with the recorded output within a declared tolerance (non-blocking)
+    name: "Descriptive numerics, quoted values compared with the recorded output within a declared tolerance (non-blocking)"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     continue-on-error: true
