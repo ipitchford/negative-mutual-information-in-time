@@ -1,0 +1,7 @@
+# verify_qutrit.py (exact checks)
+sympy==1.14.0
+mpmath==1.3.0
+# numerics.py (descriptive numerics) and make_figure.py
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.11.2

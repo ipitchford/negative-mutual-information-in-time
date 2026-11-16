@@ -1,0 +1,63 @@
+{
+ "title": "Negative mutual information in time in the smallest dimensions",
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "description": "<p><strong>Unrefereed research candidate.</strong> In one sentence: a proposed quantum &lsquo;mutual information in time&rsquo; between the input and output of a process can be negative only if the input has at least three levels, the output at least two and the starting state has rank at least two, and one explicit three-level-in, two-level-out process on a rank-two state reaches all three thresholds at once.</p><p><strong>Context.</strong> For two systems at one time, quantum mutual information measures shared information and is never negative. For one system at two times (before and after a process) there is no joint density matrix; a pseudo-density matrix, or state over time, takes its place, and unlike a density matrix it can have negative eigenvalues. Fullwood and Parzygnat (Entropy, 2025) combined the anticommutator state over time with the signed entropy S(X) = &minus;Tr X log|X| to define a dynamical mutual information, studied by Wu, Parzygnat, Vedral and Fullwood (New J. Phys., 2025) as the quantum mutual information in time, and conjectured that it is never negative. Fullwood and Yang (arXiv:2608.28946, a preprint) proved this for qubit inputs. The Omega Institute published a five-dimensional Werner&ndash;Holevo counterexample and listed the smallest failing input dimension as open. This release is not the first counterexample.</p><p><strong>Results.</strong> (1) Thresholds (Corollaries 4.2 and 5.2): every violation has input dimension at least 3, output dimension at least 2 and initial rank at least 2; the input bound rests on the Fullwood&ndash;Yang qubit theorem, the rank bound on a new pure-input proof (Proposition 3.2) using their Lemma 4.4(iv). (2) A qutrit-to-qubit channel on a rank-two state (Theorem 5.1) has mutual information in [&minus;0.00139052762357144, &minus;0.00139052762357143] nats, certified by exact root isolation and interval arithmetic, so all three thresholds are attained at once. (3) Mechanism (Lemma 2.1, Proposition 2.2, Corollary 3.3): for a rank-two state, a violation requires coherence between the occupied levels and an empty one; without it the quantity equals that of a qubit-input process and is non-negative. (4) An exactly solvable family (Theorems 4.1 and 4.3): coherent completions of a qubit erasure channel have explicit spectra; at t = 5/21 the sign reduces to 2573571875 &lt; 8707129344; the mutual information is strictly convex in t and negative exactly for 0 &lt; t &lt; (&radic;33 &minus; 1)/16. (5) Violations persist for full-rank states and channels with positive-definite Choi matrix (Proposition 6.1); coherent and incoherent completions that agree on the occupied subspace give opposite signs (Proposition 7.1).</p><p><strong>Limits.</strong> The results concern one specific proposal (the anticommutator state over time with the entropy &minus;Tr X log|X|). The qubit-input lower bound is from a preprint. Whether the quantity is unbounded below, and its most negative value for qutrits, are open; Section 8 reports numerical evidence only (searches reach about &minus;0.0591 nats and nothing lower; tensor powers become more negative). No operational meaning of negative values and no replacement measure are offered.</p><p><strong>Contents.</strong> The paper (LaTeX source and PDF) and its figure; an exact verifier (SymPy and mpmath interval arithmetic; every check raises SystemExit, also under python -O) with its recorded output; descriptive numerics (NumPy/SciPy, fixed seeds) with their recorded output; the figure script; a dated prior-art record; the bibliography; a machine-readable index; a research-gate record; a review summary; a replay receipt and SHA-256 sums.</p><p><strong>Assurance.</strong> Written proofs, with exact symbolic and interval checks of the stated spectra, certificate and witness; the numerics are descriptive and not part of any proof. Internal AI-assisted review only (five reviewer roles, an adversarial review and an audit of new proofs by a second AI model, clean replays, one revision round with extensions, a re-review and a proof audit): not peer review, independent reproduction or formal verification. The conjecture is due to Fullwood and Parzygnat, the qubit-input theorem to Fullwood and Yang, and the first counterexample to the Omega Institute. Creator: Anonymous. Text and data CC0-1.0; code MIT.</p>",
+ "creators": [
+  {
+   "name": "Anonymous"
+  }
+ ],
+ "access_right": "open",
+ "license": "cc-zero",
+ "version": "0.1.0-candidate",
+ "publication_date": "2026-11-16",
+ "keywords": [
+  "quantum information",
+  "pseudo-density matrix",
+  "states over time",
+  "mutual information in time",
+  "quantum channels",
+  "subadditivity",
+  "counterexample",
+  "interval arithmetic"
+ ],
+ "notes": "Subtitle: Three levels in, two out, a rank-two start: the exact point where a proposed quantum 'mutual information in time' can turn negative. Code (verification/*.py and the CI workflow) is MIT; prose, manuscript, figure and data are CC0-1.0.",
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/ipitchford/negative-mutual-information-in-time/tree/v0.1.0-candidate",
+   "relation": "isSupplementTo",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://evidencepress.org/releases/negative-mutual-information-in-time/",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://www.trureturing.org/research/fullwood-parzygnat-2025-states-over-time-subadditivity/",
+   "relation": "references",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.3390/e27040331",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1088/1367-2630/adde7d",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "arXiv:2608.28946",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "arXiv:2410.02137",
+   "relation": "references",
+   "scheme": "arxiv"
+  }
+ ]
+}

@@ -1,0 +1,201 @@
+{
+ "schemaVersion": "1.0",
+ "provenance": "Compiled 16 November 2026 for 0.1.0-candidate from the dated searches of the internal AI-assisted review (15 November 2026), the corpus overlap check, PRIOR_ART.md, the reference records in refs.bib, REVIEW_SUMMARY.md and the paper's own positioning (Section 1). It records scrutiny performed, not historical priority.",
+ "contributionMap": [
+  {
+   "claim": "Corollaries 4.2 and 5.2: every violation of non-negativity of the mutual information in time has input dimension at least 3, output dimension at least 2 and initial rank at least 2, and one qutrit-to-qubit rank-two process attains all three",
+   "unit": "statement",
+   "paperLocation": "Corollary 4.2; Corollary 5.2; Proposition 3.2",
+   "searches": [
+    {
+     "date": "2026-11-15",
+     "corpus": "arXiv API; Semantic Scholar citing papers of Fullwood-Parzygnat, Fullwood-Yang and Wu-Parzygnat-Vedral-Fullwood; GitHub issue search of the Omega Institute repository; general web search; Evidence Press release corpus (site papers/)",
+     "query": "pseudo-density matrix entropy subadditivity; states over time entropy; mutual information in time; dynamical mutual information; all recent papers by Fullwood and by Parzygnat to November 2026; Omega issues: Fullwood, pseudo-density, subadditivity qutrit"
+    },
+    {
+     "date": "2026-11-15",
+     "corpus": "as above, re-run by the internal reviewers and the second-model adversarial review during the revision round",
+     "query": "qubit output pseudo-density matrix negative mutual information; rank two state over time violation; cross-coherence support pseudo-density spectrum; coherent erasure channel state over time"
+    }
+   ],
+   "closestPriorWork": "Fullwood-Yang arXiv:2608.28946v1 Theorem 4.1 (qubit inputs) and Section 6; Omega Institute dossier release 8f61e708e239 (d = 5 Werner-Holevo counterexample; smallest input dimension listed as open)",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "not the first counterexample; the input-dimension bound is FY's (preprint); the pure-input bound and the attainment at (3, 2, 2) were not found"
+  },
+  {
+   "claim": "Theorem 5.1: explicit rational qutrit-to-qubit channel with I in [-0.00139052762357144, -0.00139052762357143], certified by exact root isolation and interval arithmetic",
+   "unit": "object",
+   "paperLocation": "Theorem 5.1",
+   "searches": [
+    {
+     "date": "2026-11-15",
+     "corpus": "as above, re-run by the internal reviewers and the second-model adversarial review during the revision round",
+     "query": "qubit output pseudo-density matrix negative mutual information; rank two state over time violation; cross-coherence support pseudo-density spectrum; coherent erasure channel state over time"
+    }
+   ],
+   "closestPriorWork": "none with qubit output found",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "certified computation in verification/verify_qutrit.py"
+  },
+  {
+   "claim": "Lemma 2.1, Proposition 2.2, Corollary 3.3: rank-two violations require coherence between the support of the state and its complement",
+   "unit": "statement",
+   "paperLocation": "Section 2; Corollary 3.3",
+   "searches": [
+    {
+     "date": "2026-11-15",
+     "corpus": "arXiv API; Semantic Scholar citing papers of Fullwood-Parzygnat, Fullwood-Yang and Wu-Parzygnat-Vedral-Fullwood; GitHub issue search of the Omega Institute repository; general web search; Evidence Press release corpus (site papers/)",
+     "query": "pseudo-density matrix entropy subadditivity; states over time entropy; mutual information in time; dynamical mutual information; all recent papers by Fullwood and by Parzygnat to November 2026; Omega issues: Fullwood, pseudo-density, subadditivity qutrit"
+    },
+    {
+     "date": "2026-11-15",
+     "corpus": "as above, re-run by the internal reviewers and the second-model adversarial review during the revision round",
+     "query": "qubit output pseudo-density matrix negative mutual information; rank two state over time violation; cross-coherence support pseudo-density spectrum; coherent erasure channel state over time"
+    }
+   ],
+   "closestPriorWork": "FY Lemma 4.4(iv) (block inequality, used); FP Theorem 2 (measurement processes)",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "the block form itself is elementary; the cross-coherence criterion was not found"
+  },
+  {
+   "claim": "Theorems 4.1 and 4.3: coherent erasure family with explicit spectrum, integer certificate 2573571875 < 8707129344 at t = 5/21, strict convexity and negativity exactly for 0 < t < (sqrt(33)-1)/16",
+   "unit": "statement",
+   "paperLocation": "Section 4",
+   "searches": [
+    {
+     "date": "2026-11-15",
+     "corpus": "arXiv API; Semantic Scholar citing papers of Fullwood-Parzygnat, Fullwood-Yang and Wu-Parzygnat-Vedral-Fullwood; GitHub issue search of the Omega Institute repository; general web search; Evidence Press release corpus (site papers/)",
+     "query": "pseudo-density matrix entropy subadditivity; states over time entropy; mutual information in time; dynamical mutual information; all recent papers by Fullwood and by Parzygnat to November 2026; Omega issues: Fullwood, pseudo-density, subadditivity qutrit"
+    },
+    {
+     "date": "2026-11-15",
+     "corpus": "as above, re-run by the internal reviewers and the second-model adversarial review during the revision round",
+     "query": "qubit output pseudo-density matrix negative mutual information; rank two state over time violation; cross-coherence support pseudo-density spectrum; coherent erasure channel state over time"
+    }
+   ],
+   "closestPriorWork": "Omega Werner-Holevo family (different mechanism: counting effect in dimension 5)",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "answers FY's request for a simple, physically motivated example"
+  },
+  {
+   "claim": "Method: eigenbasis block decomposition of the anticommutator state over time, coherent completion of a qubit-input channel, exact spectra with integer sign certificates, and root isolation plus interval arithmetic for the witness",
+   "unit": "method",
+   "paperLocation": "Lemma 2.1; Sections 4 and 5; verification/verify_qutrit.py",
+   "searches": [
+    {
+     "date": "2026-11-15",
+     "corpus": "arXiv API; Semantic Scholar citing papers of Fullwood-Parzygnat, Fullwood-Yang and Wu-Parzygnat-Vedral-Fullwood; GitHub issue search of the Omega Institute repository; general web search; Evidence Press release corpus (site papers/)",
+     "query": "pseudo-density matrix entropy subadditivity; states over time entropy; mutual information in time; dynamical mutual information; all recent papers by Fullwood and by Parzygnat to November 2026; Omega issues: Fullwood, pseudo-density, subadditivity qutrit"
+    },
+    {
+     "date": "2026-11-15",
+     "corpus": "as above, re-run by the internal reviewers and the second-model adversarial review during the revision round",
+     "query": "qubit output pseudo-density matrix negative mutual information; rank two state over time violation; cross-coherence support pseudo-density spectrum; coherent erasure channel state over time"
+    }
+   ],
+   "closestPriorWork": "Anticommutator states over time and the signed entropy: FP, WPVF, FY; real-root isolation and interval arithmetic are standard computer-algebra techniques (SymPy, mpmath)",
+   "verdict": "known-cited",
+   "verdictNote": "the techniques are standard; novelty is claimed only for the statements above"
+  }
+ ],
+ "sourcesReadInFull": [
+  {
+   "citation": "Fullwood, J. and Parzygnat, A. J. (2025), On dynamical measures of quantum information, Entropy 27(4), 331 (published text via PMC and arXiv:2306.01831v2)",
+   "usedFor": "definition, Remark 1 and Section 5 (conjecture), Theorem 2",
+   "readWhat": "whole paper",
+   "date": "2026-11-15",
+   "evidenceLocator": "https://doi.org/10.3390/e27040331"
+  },
+  {
+   "citation": "Fullwood, J. and Yang, B., On the entropy of a pseudo-density matrix, arXiv:2608.28946v1",
+   "usedFor": "Theorem 4.1, Lemma 4.4(iv), Section 6",
+   "readWhat": "whole paper",
+   "date": "2026-11-15",
+   "evidenceLocator": "https://arxiv.org/abs/2608.28946v1"
+  },
+  {
+   "citation": "Wu, Z., Parzygnat, A. J., Vedral, V. and Fullwood, J. (2025), Quantum mutual information in time, New J. Phys. 27(6), 064504 (arXiv:2410.02137v1)",
+   "usedFor": "terminology; non-negativity in known examples",
+   "readWhat": "whole paper",
+   "date": "2026-11-15",
+   "evidenceLocator": "https://doi.org/10.1088/1367-2630/adde7d"
+  },
+  {
+   "citation": "The Omega Institute, Subadditivity of the entropy of quantum states over time, research dossier release 8f61e708e239 and preregistration issue #14994",
+   "usedFor": "d = 5 Werner-Holevo counterexample; open smallest dimension",
+   "readWhat": "dossier page and issue",
+   "date": "2026-11-15",
+   "evidenceLocator": "https://www.trureturing.org/research/fullwood-parzygnat-2025-states-over-time-subadditivity/"
+  }
+ ],
+ "limitationTriage": [
+  {
+   "limitation": "Whether the mutual information in time is unbounded below",
+   "closingQuestion": "Is inf I = -infinity in finite dimensions?",
+   "triedOrSearched": "tensor powers of E_t* (k = 1, 2, 3) become more negative than k I(t*); no proof found within budget",
+   "estimatedCost": "research-level",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Section 8",
+   "whyNotClosedNow": "attempted in the revision round without success"
+  },
+  {
+   "limitation": "Minimum over qutrit processes",
+   "closingQuestion": "Is I(t*) the minimum over all qutrit processes?",
+   "triedOrSearched": "numerical searches (numerics.py) reach I(t*) and nothing lower",
+   "estimatedCost": "research-level",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Section 8",
+   "whyNotClosedNow": "numerical evidence only"
+  },
+  {
+   "limitation": "The dimension threshold relies on a preprint",
+   "closingQuestion": "Is FY Theorem 4.1 correct?",
+   "triedOrSearched": "read in full by the reviewers; dependence stated in Corollary 4.2",
+   "estimatedCost": "external refereeing",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "stated in the paper",
+   "whyNotClosedNow": "outside the scope of this release"
+  },
+  {
+   "limitation": "Computational checks could be vacuous under optimisation or share an error with the text",
+   "closingQuestion": "Do the checks fail when a constant is wrong?",
+   "triedOrSearched": "assert-based verifier replaced by explicit SystemExit checks; negative controls (integer certificate; interval bound) exit 1 under -O",
+   "estimatedCost": "minutes",
+   "cheap": true,
+   "decision": "CLOSED",
+   "reasonOpen": "",
+   "whyNotClosedNow": ""
+  },
+  {
+   "limitation": "Priority rests on a bounded search",
+   "closingQuestion": "Would indexed databases change attribution?",
+   "triedOrSearched": "arXiv, Semantic Scholar citing papers, the Omega repository issues, web search, Evidence Press corpus",
+   "estimatedCost": "subscription indexes",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "MathSciNet and Web of Science not used",
+   "whyNotClosedNow": "recorded here and in PRIOR_ART.md"
+  }
+ ],
+ "extensionScout": {
+  "by": "five internal reviewer agents and an adversarial review by a second AI model",
+  "date": "2026-11-15",
+  "proposals": [
+   "minimal output dimension (qubit output)",
+   "mechanism for rank-two violations",
+   "global qutrit minimum",
+   "unboundedness via tensor powers",
+   "consequences for the subadditivity test and related conjectures"
+  ],
+  "actions": [
+   "done: Theorem 5.1, Corollary 5.2",
+   "done: Lemma 2.1, Proposition 2.2, Corollary 3.3",
+   "numerical observation only (Section 8)",
+   "attempted; numerical observation and open question (Section 8)",
+   "done: Section 8 Consequences"
+  ]
+ }
+}

@@ -1,0 +1,26 @@
+{
+  "unconstrained_minimum_found": {
+    "3->3, Kraus rank 3, seed 3, 25 starts": -0.059085995709308614,
+    "3->3, Kraus rank 9, seed 4, 25 starts": -0.058741833901766904,
+    "3->2, Kraus rank 3, seed 1, 25 starts": -0.0010923857523934544,
+    "3->2, Kraus rank 6, seed 2, 25 starts": -1.639792964303055e-06
+  },
+  "structured_3to2_minimum_found": {
+    "I": -0.0013917906646580963,
+    "input_diag": [
+      0.0,
+      0.021033950302099806,
+      0.9789660496979002
+    ]
+  },
+  "tensor_powers_at_t_star": {
+    "1": -0.059085998939089945,
+    "2": -0.11912305761664932,
+    "3": -0.18016412755171451
+  },
+  "pure_input_random_minimum": -1.554312234475219e-15,
+  "random_rank_two_qutrit_processes": {
+    "samples": 4000,
+    "negative": 0
+  }
+}

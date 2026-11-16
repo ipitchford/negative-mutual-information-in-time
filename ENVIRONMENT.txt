@@ -1,0 +1,9 @@
+Release replay environment (16 November 2026, macOS arm64 host)
+Interpreter: CPython 3.12.11 (uv-managed; checked inside the run with sys.version; invoked as `python`)
+verify_qutrit.py: sympy 1.14.0, mpmath 1.3.0
+numerics.py: numpy 2.3.5, scipy 1.17.0
+make_figure.py: numpy 2.3.5, matplotlib 3.11.2
+GitHub CI: ubuntu-latest, actions/setup-python 3.12, pip-installed pins as above.
+Cross-platform comparison: verification.json is compared byte for byte (exact strings and booleans only).
+numerics.json floats are compared within 1e-6 relative or absolute (declared tolerance; optimiser minima can differ in
+the last digits across platforms); that job is non-blocking because the numerics are descriptive.

@@ -1,0 +1,19 @@
+target_id: negative-mutual-information-in-time
+date: 2026-11-15
+claim:
+  exact_statement: |
+    With S(X) = -Tr X log|X|, J[E] = sum_ij |i><j| (x) E(|j><i|) and R = {rho (x) 1, J[E]}/2,
+    I(E,rho) = S(rho) + S(E(rho)) - S(R) can be negative only if input dimension >= 3, output dimension >= 2
+    and rank(rho) >= 2 (Fullwood-Yang Thm 4.1 for d = 2; trivial for m = 1; pure inputs via FY Lemma 4.4(iv)).
+    An explicit channel F: M_3 -> M_2 with rank-two input has I in [-0.00139052762357144, -0.00139052762357143].
+    The coherent erasure family E_t: M_3 -> M_3, rho = diag(0,1/2,1/2), has I(t) strictly convex, negative exactly
+    for 0 < t < (sqrt33 - 1)/16; I(5/21) = (1/42) log(2573571875/8707129344).
+    Rank-two violations require coherence between supp(rho) and its complement.
+  exclusions:
+    - Not the first refutation of the Fullwood-Parzygnat conjecture (d = 5 Werner-Holevo example is prior public work).
+    - No global minimum over qutrit processes; unboundedness below is open (numerical evidence only).
+sources:
+  - Fullwood & Parzygnat, Entropy 27(4) 331 (2025), doi:10.3390/e27040331
+  - Fullwood & Yang, arXiv:2608.28946v1 (2026)
+  - Wu, Parzygnat, Vedral & Fullwood, New J. Phys. 27 (2025) 064504, doi:10.1088/1367-2630/adde7d
+  - The Omega Institute dossier, release 8f61e708e239 (trureturing.org), issue #14994

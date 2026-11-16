@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using these metadata."
+type: software
+title: "Negative mutual information in time in the smallest dimensions"
+abstract: "Unrefereed research candidate. Fullwood and Parzygnat proposed a mutual information between the input and output of a quantum process, built from the anticommutator state over time (pseudo-density matrix) and the signed entropy S(X) = -Tr X log|X|, and conjectured that it is never negative. Fullwood and Yang proved this for qubit inputs (preprint), and a public five-dimensional Werner-Holevo example showed that it fails in general. This work shows that a violation needs input dimension at least 3, output dimension at least 2 and initial rank at least 2, and gives one qutrit-to-qubit process on a rank-two state that attains all three bounds, certified by exact root isolation and interval arithmetic. For rank-two states a violation requires coherence between the occupied levels and an empty one. A family of coherent completions of a qubit erasure channel has explicit spectra; at t = 5/21 its sign reduces to 2573571875 < 8707129344, and it is negative exactly for 0 < t < (sqrt(33)-1)/16. Whether the quantity is unbounded below, and its most negative qutrit value, remain open."
+authors:
+  - name: "Anonymous"
+version: "0.1.0-candidate"
+date-released: "2026-11-16"
+doi: "10.5281/zenodo.24269629"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24269629"
+    description: "This version"
+  - type: doi
+    value: "10.5281/zenodo.24269628"
+    description: "All versions (concept DOI)"
+repository-code: "https://github.com/ipitchford/negative-mutual-information-in-time"
+url: "https://evidencepress.org/releases/negative-mutual-information-in-time/"
+license: CC0-1.0
+keywords:
+  - quantum information
+  - pseudo-density matrix
+  - states over time
+  - mutual information in time
+  - quantum channels
+  - subadditivity
+preferred-citation:
+  type: article
+  title: "Negative mutual information in time in the smallest dimensions"
+  authors:
+    - name: "Anonymous"
+  year: 2026
+  doi: "10.5281/zenodo.24269629"
+  publisher:
+    name: "Zenodo"
+  notes: "Version 0.1.0-candidate; unrefereed"

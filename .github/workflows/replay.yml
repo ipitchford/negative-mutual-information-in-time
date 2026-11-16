@@ -1,0 +1,73 @@
+# SPDX-License-Identifier: MIT
+name: Replay
+on:
+  push:
+  pull_request:
+jobs:
+  quick:
+    name: Manifest; exact verifier under python -O compared with the recorded output; negative controls (blocking)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check MANIFEST.sha256
+        run: sha256sum -c MANIFEST.sha256
+      - name: Install pinned requirements of the exact verifier
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0 mpmath==1.3.0
+      - name: Run the verifier under -O in a copy; run the negative controls
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          pkg="$RUNNER_TEMP/pkg"; n1="$RUNNER_TEMP/neg1"; n2="$RUNNER_TEMP/neg2"
+          for d in "$pkg" "$n1" "$n2"; do mkdir -p "$d"; cp -R verification "$d/verification"; done
+          test "$(grep -c 'num, den = 5\*\*5\*7\*\*7, ' "$n1/verification/verify_qutrit.py")" = 1
+          sed -i 's|num, den = 5\*\*5\*7\*\*7, |num, den = 5**6*7**7, |' "$n1/verification/verify_qutrit.py"
+          test "$(grep -c 'hi_x < sp.Rational("-0.00139052762357143")' "$n2/verification/verify_qutrit.py")" = 1
+          sed -i 's|hi_x < sp.Rational("-0.00139052762357143")|hi_x < sp.Rational("-0.00139052762357150")|' "$n2/verification/verify_qutrit.py"
+          cd "$pkg" && python3 -I -B -O verification/verify_qutrit.py > verification.out.json
+          cd "$n1"; if python3 -I -B -O verification/verify_qutrit.py > /dev/null; then echo "negative control 1 not detected"; exit 1; fi
+          cd "$n2"; if python3 -I -B -O verification/verify_qutrit.py > /dev/null; then echo "negative control 2 not detected"; exit 1; fi
+      - name: Compare with the recorded output (exact)
+        run: |
+          # Every field of verification.json is an exact string (rationals, factored polynomials, outward-rounded
+          # interval endpoints, decimal expansions from 30-60 digit arithmetic) or a boolean: compared byte for byte.
+          cmp "$RUNNER_TEMP/pkg/verification.out.json" verification/verification.json
+          grep -q '"all_checks_passed": true' verification/verification.json
+          grep -q '"inequality": "2573571875 < 8707129344"' verification/verification.json
+          echo "PASS: verifier output identical to verification/verification.json; both negative controls detected"
+      - name: Working tree unchanged
+        run: test -z "$(git status --porcelain)"
+  numerics:
+    name: Descriptive numerics compared with the recorded output within a declared tolerance (non-blocking)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned requirements
+        run: python3 -m pip install --disable-pip-version-check numpy==2.3.5 scipy==1.17.0
+      - name: Run numerics.py and compare
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          python3 -I -B verification/numerics.py > "$RUNNER_TEMP/numerics.json"
+          python3 -I - "$RUNNER_TEMP/numerics.json" verification/numerics.json <<'PY'
+          import json, math, sys
+          # Optimiser minima and eigenvalue sums can differ in the last digits across platforms and BLAS builds.
+          # Declared tolerance: floats within 1e-6 relative or 1e-6 absolute; integers and keys exactly.
+          a, b = (json.load(open(p)) for p in sys.argv[1:3])
+          def d(x, y, p=""):
+              if isinstance(x, dict): return [] if set(x) == set(y) and not any(d(x[k], y[k], p + "/" + k) for k in x) else [p]
+              if isinstance(x, list): return [] if len(x) == len(y) and not any(d(u, v, p) for u, v in zip(x, y)) else [p]
+              if isinstance(x, float): return [] if math.isclose(x, y, rel_tol=1e-6, abs_tol=1e-6) else [p]
+              return [] if x == y else [p]
+          bad = d(a, b)
+          if bad: raise SystemExit(f"differs beyond the declared tolerance: {bad}")
+          print("PASS: numerics agree with verification/numerics.json within the declared tolerance")
+          PY
