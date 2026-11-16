@@ -5,5 +5,8 @@ numerics.py: numpy 2.3.5, scipy 1.17.0
 make_figure.py: numpy 2.3.5, matplotlib 3.11.2
 GitHub CI: ubuntu-latest, actions/setup-python 3.12, pip-installed pins as above.
 Cross-platform comparison: verification.json is compared byte for byte (exact strings and booleans only).
-numerics.json floats are compared within 1e-6 relative or absolute (declared tolerance; optimiser minima can differ in
-the last digits across platforms); that job is non-blocking because the numerics are descriptive.
+numerics.json (descriptive, non-blocking job): the values quoted in Section 8 within 1e-6 relative or absolute, counts
+exactly; the unquoted best values of other random-start searches are reported and only checked not to go below the family
+minimum, because local optimisation can land in different local minima across platforms (observed on Linux CI: 9-Kraus
+qutrit search -0.058633 vs -0.058742 recorded; unconstrained qutrit-to-qubit search -0.001028 vs -0.001092; structured
+minimiser coordinates differ at about 2e-6). No quoted value changed.

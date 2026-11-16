@@ -19,5 +19,7 @@ Values confirmed: all_checks_passed true; tau_exact (sqrt(33)-1)/16; I(5/21) = -
 After the replay only the title-page version/DOI line of the manuscript (and the rebuilt PDF), README and metadata
 files were added or changed; the scripts and recorded outputs are byte-identical to the replayed candidate.
 
-Cross-platform policy (also in CI and ENVIRONMENT.txt): verification.json byte for byte; numerics.json floats within
-1e-6 relative or absolute (non-blocking job).
+Cross-platform policy (also in CI, README.md and ENVIRONMENT.txt): verification.json byte for byte (blocking; identical
+on GitHub's Linux runner). numerics.json in a non-blocking job: quoted Section 8 values within 1e-6, counts exactly; the
+unquoted best values of other random-start searches only checked not to go below the family minimum (on Linux they land in
+different local minima: -0.058633 and -0.001028 instead of -0.058742 and -0.001092; no quoted value is affected).

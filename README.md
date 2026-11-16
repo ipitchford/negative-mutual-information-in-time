@@ -83,9 +83,12 @@ The verifier takes a few seconds and numerics.py about a minute. GitHub CI
 ([.github/workflows/replay.yml](.github/workflows/replay.yml)) checks the manifest, runs the verifier under `-O` and
 compares its output byte for byte with `verification/verification.json` (every field is an exact string or boolean),
 and checks two negative controls (a wrong integer certificate; a wrong interval bound), each of which must make the
-verifier exit 1 (blocking). A separate non-blocking job reruns `numerics.py` and compares it with
-`verification/numerics.json` within a declared tolerance (floats within 1e-6 relative or absolute; integers exactly),
-because optimiser minima can differ in the last digits across platforms.
+verifier exit 1 (blocking). A separate non-blocking job reruns `numerics.py`: the values quoted in Section 8
+(-0.0590860, -0.0013918, the tensor powers, 4000 samples with none negative) must agree with
+`verification/numerics.json` within 1e-6 and counts exactly. Random-start local optimisation lands in different local
+minima across platforms, so the unquoted best values of the other searches may differ (on GitHub's Linux runners the
+9-Kraus qutrit search found -0.058633 rather than -0.058742, and the unconstrained qutrit-to-qubit search -0.001028
+rather than -0.001092); for these the job only checks that nothing below the family minimum is found.
 
 ## Licence and credit
 
